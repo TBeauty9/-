@@ -1,7 +1,15 @@
 ---
 layout: default
 ---
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script>
+  MathJax = {
+    tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }
+  };
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
+<div id="markdown-content" style="display:none;">
 ## 基础知识
 
 ### 基础知识：电压即两点间电势差
@@ -120,3 +128,12 @@ s2 断开，s3 闭合时，\(V_B=5\) 且为保证电容两端电压不能突变�
 
 放电延迟：电容比作电源
 ![image](https://img2024.cnblogs.com/blog/3267933/202610/3267933-20261020110325476-207039470.png)
+</div>
+
+<div id="rendered-content"></div>
+
+<script>
+  // 获取隐藏的 Markdown 文本并渲染
+  const rawText = document.getElementById('markdown-content').innerHTML;
+  document.getElementById('rendered-content').innerHTML = marked.parse(rawText);
+</script>
